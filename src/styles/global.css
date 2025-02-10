@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --color-xkale: #6BD63D;
+  --color-bluePrimary: #004cff;
+  --color-xkaleblue-100: #134D67;
+  --color-xkaleblue-200: #0C2455;
+  --color-xkaleblue-300: #121336;
+
+  --text-h3: 1.17rem;
+
+
+}
+
+body {
+  font-family: 'Public Sans Variable', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}

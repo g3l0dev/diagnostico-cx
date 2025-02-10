@@ -1,0 +1,25 @@
+[
+  {
+    "content": {
+      "text":[
+        "Desde que implementamos las recomendaciones de Xkale, nuestra satisfacción al cliente aumentó en un 15% y hemos reducido un 30% nuestra carga operativa."
+        
+      ],
+      "signature": {
+        "name": "Robinson Mera",
+        "empresa": "Aseguradora del Sur"
+      }
+    }
+  },
+  {
+    "content": {
+      "text":[
+        "Gracias a la consultoría en Workforce Management, logramos eficientizar la proyección de demanda e identificar nuevos mecanismos para adaptar capacidad instalada a la dinámica de nuestros clientes. Incrementamos productividad por mejor planificación de turnos y tiempos de descanso, reduciendo costos en programación de tiempo extra, especialmente en fechas de alta demanda. El enfoque práctico y personalizado de esta consultoría nos permitió mejorar niveles de servicio y fortalecer la satisfacción de nuestros clientes, lo que se traduce en mayores resultados para nuestra Organización."
+      ],
+      "signature": {
+        "name": "Alejandro Albuja",
+        "empresa": "Canales y Servicio al Cliente | Centro de Servicios"
+      }
+    }
+  }
+]

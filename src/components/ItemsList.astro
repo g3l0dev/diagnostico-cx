@@ -1,0 +1,15 @@
+---
+interface Props {
+  text: string;
+}
+const { text } = Astro.props;
+---
+
+<li class="mt-4 mb-4 p-4 relative">
+  <div class="h-1 bg-xkale w-full absolute top-0 left-0"></div>
+  <div
+    class="size-4 bg-xkale rounded-full absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2"
+  >
+  </div>
+  {text}
+</li>

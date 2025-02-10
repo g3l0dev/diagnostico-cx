@@ -1,0 +1,10 @@
+---
+interface Props {
+  pais: string;
+  telefono: string;
+}
+const { pais, telefono } = Astro.props;
+---
+
+<h3 class="text-lg font-bold">{pais}</h3>
+<p class="text-sm">{telefono}</p>

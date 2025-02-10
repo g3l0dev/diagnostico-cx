@@ -1,0 +1,11 @@
+---
+interface Props {
+  id?: string;
+  class?: string;
+}
+---
+<section class={`${Astro.props.class}`} id={Astro.props.id}>
+  <div class="container mx-auto p-4">
+    <slot />
+  </div>
+</section>

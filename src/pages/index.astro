@@ -1,11 +1,429 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Header from "@components/Header.astro";
+import Section from "@components/Section.astro";
+import "@fontsource-variable/public-sans";
+import CONTENT from "@utils/CONTENT.json";
+import CARDS from "@utils/CARDS.json";
+import ITEMS from "@utils/ITEMS.json";
+import TEXT from "@utils/TEXT.json";
+import TESTIMONIOS from "@utils/TESTIMONIOS.json";
+import PREGUNTA from "@utils/FAQ.json";
+import ContentList from "@components/ContentList.astro";
+import CardsList from "@components/CardsList.astro";
+import ItemsList from "@components/ItemsList.astro";
+import { Icon } from "astro-icon/components";
+import Footer from "@components/Footer.astro";
+import Seo from "@components/Seo.astro";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<!doctype html>
+<html lang="es">
+	<head>
+		<Seo
+			title="Xkale | Diagnóstico"
+			description="Xkale es un servicio de experiencia del cliente personalizado para empresas líderes"
+		/>
+	</head>
+	<body>
+		<noscript
+			><iframe
+				src="https://www.googletagmanager.com/ns.html?id=GTM-KB9DNXPH"
+				height="0"
+				width="0"
+				style="display:none;visibility:hidden"></iframe></noscript
+		>
+		<Header />
+		<main>
+			<Section class="relative">
+				<div
+					class="absolute -z-10 top-0 left-0 w-full h-full bg-[url(/banner.avif)] bg-center bg-no-repeat bg-cover"
+				>
+				</div>
+				<div class="grid lg:grid-cols-2">
+					<div
+						class="relative z-10 h-full max-w-[33rem] flex flex-col lg:justify-center"
+					>
+						<h1 class="text-xkale text-balance text-4xl mb-5">
+							Obtén un diagnóstico personalizado en la madurez de la estrategia
+							de experiencia al cliente.
+						</h1>
+						<p class="text-pretty text-white my-4">
+							Descubre dónde están las fallas y fisuras en la experiencia de tu
+							cliente y con ello diseñar estrategias de experiencia del cliente
+							efectivas aumentando la rentabilidad de tu negocio.
+						</p>
+						<h5 class="text-xkale text-balance mb-4">
+							*Descubre si tu empresa aplica para recibir este diagnóstico.
+						</h5>
+						<a
+							href="#formulario"
+							class="bg-white max-w-max text-xkale-blue-primary rounded-lg py-2 px-4 lg:hover:scale-105 duration-500 text-bluePrimary"
+						>
+							Quiero aplicar</a
+						>
+					</div>
+					<div id="formulario">
+						<div class="_form_18"></div><script
+							src="https://xkale.activehosted.com/f/embed.php?id=18"
+							charset="utf-8"></script>
+					</div>
+				</div>
+			</Section>
+			<Section>
+				<div class="flex flex-col items-center">
+					<h2 class="text-center text-2xl font-bold mb-[0.83rem]">
+						¿Por qué realizar un diagnóstico de la Estrategia de experiencia del
+						cliente en tu empresa?
+					</h2>
+					<p class="text-gray-700 text-center mb-4">
+						Si estás aquí, es porque estás experimentando algunas de estas
+						situaciones en tu empresa:
+					</p>
+					<ul class="ml-9 mb-4">
+						{CONTENT.map((text) => <ContentList {...text} />)}
+					</ul>
+					<a
+						href="#formulario"
+						class="bg-bluePrimary max-w-max text-xkale-blue-primary rounded-lg py-2 px-4 lg:hover:scale-105 duration-500 text-white"
+					>
+						Aplica a tu diagnóstico gratuito</a
+					>
+				</div>
+			</Section>
+			<Section>
+				<div class="flex flex-col items-center justify-center">
+					<h2 class="text-center text-2xl font-bold mb-[0.83rem]">
+						Con este diagnóstico en experiencia del cliente lograrás:
+					</h2>
+					<ul class="grid gap-4 lg:grid-cols-2 mb-8">
+						{CARDS.map((item) => <CardsList {...item} />)}
+					</ul>
+					<a
+						href="#formulario"
+						class="bg-bluePrimary max-w-max text-xkale-blue-primary rounded-lg py-2 px-4 lg:hover:scale-105 duration-500 text-white"
+					>
+						Aplica ahora</a
+					>
+				</div>
+			</Section>
+			<Section class="relative">
+				<div
+					class="absolute top-0 left-0 w-full h-full bg-cover bg-gradient-to-l from-xkaleblue-300 via-xkaleblue-100 to-xkaleblue-300 -z-10"
+				>
+				</div>
+				<div class="grid lg:grid-cols-2 gap-4 overflow-hidden my-4">
+					<div
+						class="text-2xl text-balance text-xkale flex flex-col w-ful h-full justify-center"
+					>
+						<h2 class="text-balance text-2xl font-bold mb-[0.83rem]">
+							Al aplicar a este diagnóstico podrás diseñar una estrategia de
+							experiencia del cliente centrada en la rentabilidad de tu negocio,
+							que te permitirá:
+						</h2>
+					</div>
+					<div class="w-full h-full">
+						<img
+							src="/grafico.webp"
+							alt="Grafico"
+							class="object-contain"
+							loading="lazy"
+							class="w-full h-full"
+						/>
+					</div>
+				</div>
+				<div>
+					<ul class="relative grid lg:grid-cols-3 text-white">
+						<div
+							class="lg:absolute lg:w-1 h-[10.2rem] lg:bg-xkale lg:left-full lg:top-4"
+						>
+						</div>
+						{ITEMS.map((item) => <ItemsList {...item} />)}
+					</ul>
+				</div>
+				<div class="flex flex-col items-center justify-center">
+					<div
+						class="flex flex-col text-white font-bold text-3xl text-center mb-6"
+					>
+						<span
+							>Descubre cómo puedes transformar la experiencia del cliente, con
+							nuestro diagnóstico
+						</span>
+						<span class="text-xkale">100% Gratuito</span>
+					</div>
+					<a
+						href="#formulario"
+						class="bg-white text-bluePrimary rounded-lg py-2 px-4 lg:hover:scale-105 duration-500"
+					>
+						Quiero este diagnóstico</a
+					>
+				</div>
+			</Section>
+			<Section>
+				<div class="relative overflow-hidden flex flex-col items-center">
+					<div class="flex flex-col items-center justify-center">
+						<div class="w-full max-w-[50rem]">
+							<h2 class="text-center text-2xl font-bold mb-[0.83rem]">
+								Somos Xkale, expertos en transformar la experiencia del cliente
+								para empresas líderes.
+							</h2>
+						</div>
+					</div>
+					<div
+						class="grid w-full gap-4 lg:grid-cols-3 bg-gray-100 shadow-lg rounded-xl p-4 my-8"
+					>
+						<div class="flex flex-col items-center">
+							<h3 class="font-bold text-xkale-blue-300 text-4xl mb-1">
+								20+ años
+							</h3>
+							<p class="text-pretty mt-1 text-center text-xl">
+								Impulsando estrategias de experiencia del cliente.
+							</p>
+						</div>
+						<div class="flex flex-col items-center">
+							<h3
+								class="font-bold text-xkale-blue-300 text-xkale-blue-300text-balance"
+							>
+								Resultados tangibles
+							</h3>
+							<p class="font-bold text-pretty text-center">
+								Mejora en satisfacción, incremento de ingresos, reducción de
+								costos operativos, aumento en la retención e incremento en el
+								NPS.
+							</p>
+						</div>
+						<div class="flex flex-col items-center text-center">
+							<h3 class="font-bold text-xkale-blue-300 text-balance">
+								Experiencia en sectores clave
+							</h3>
+							<p>
+								Retail, salud, banca, seguros, sector público, servicios, BPO´s
+								y Centros de Contacto.
+							</p>
+						</div>
+					</div>
+					<a
+						href="#formulario"
+						class="text-white bg-bluePrimary rounded-lg py-2 px-4 lg:hover:scale-105 duration-500"
+					>
+						Quiero este diagnóstico</a
+					>
+				</div>
+			</Section>
+			<Section class="relative">
+				<div
+					class="absolute -z-10 top-0 left-0 w-full h-full bg-gradient-to-l from-xkaleblue-300 via-xkaleblue-100 to-xkaleblue-300"
+				>
+				</div>
+				<div class="grid lg:grid-cols-2 gap-y-4 lg:gap-x-20 w-full h-full">
+					<div class="flex flex-col">
+						<h2 class="text-xkale text-balance text-2xl mb-[0.83rem] font-bold">
+							Un enfoque personalizado con Xkale
+						</h2>
+						<p class="text-white text-pretty mb-4">
+							En Xkale, queremos transformar la experiencia del cliente para
+							empresas líderes como la tuya. Nuestro equipo de expertos trabaja
+							de la mano contigo para identificar oportunidades de mejora y
+							diseñar estrategias efectivas que impulsen la rentabilidad de tu
+							negocio.
+						</p>
+						<h3 class="text-white text-h3 font-bold text-balance mb-4">
+							<span class="text-xkale">Mariana Moreno:</span> Tu consultora experta
+							en experiencia del cliente
+						</h3>
+						<p class="text-white text-pretty mb-4">
+							Mariana Moreno, con más de 15 años de experiencia en sectores como
+							farmacéuticas, banca, aseguradoras, retail y salud, lidera nuestro
+							equipo de consultoría. Su enfoque estratégico y pasión por la
+							innovación garantizan un diagnóstico preciso y soluciones
+							prácticas adaptadas a las necesidades únicas de tu empresa.
+						</p>
+						<h3 class="text-white text-h3 text-balance mb-4 font-bold">
+							Lo que puedes esperar del diagnóstico:
+						</h3>
+						<ul class="list-disc ml-10 text-pretty">
+							{
+								TEXT.map(({ head, body }) => (
+									<li class="text-white text-pretty mb-2">
+										<span class="font-bold">{head}</span>
+										<span>{body}</span>
+									</li>
+								))
+							}
+						</ul>
+						<p class="text-white text-pretty mb-4">
+							Con Xkale y la experiencia de Mariana Moreno, recibirás una
+							asesoría integral que transformará la experiencia de tus clientes
+							y potenciará la rentabilidad de tu empresa.
+						</p>
+						<a
+							href="#inscripcion"
+							class="bg-white text-bluePrimary rounded-lg py-2 px-4 lg:hover:scale-105 duration-500 max-w-max"
+						>
+							Aplica ahora</a
+						>
+					</div>
+					<div class="relative overflow-hidden w-full h-full">
+						<img
+							class="mariana w-full h-full max-h-[38rem] object-contain"
+							src="/mariana-moreno-xkale.webp"
+							alt="mariana moreno"
+							loading="lazy"
+						/>
+						<div class="absolute left-0 top-[70%]">
+							<h3 class="text-xkale text-h3 font-bold mb-1">Mariana Moreno</h3>
+							<div class="h-1 bg-xkale"></div>
+							<p class="text-white text-pretty flex flex-col mb-4">
+								<span>Líder en consultoría</span>
+								<span>en experiencia del cliente</span>
+							</p>
+						</div>
+					</div>
+				</div>
+			</Section>
+			<Section>
+				<div class="flex flex-col items-center justify-center">
+					<div class="w-full max-w-[50rem]">
+						<h2
+							class="font-bold text-2xl mb-[0.83rem] text-center text-balance"
+						>
+							Empresas líderes han transformado su atención al cliente con la
+							consultoría de experiencia del cliente con Xkale.
+						</h2>
+					</div>
+				</div>
+				<lite-youtube videoid="ADrB8owi8KM"></lite-youtube>
+			</Section>
+			<Section class="relative">
+				<div
+					class="lg:bg-[url(/testimonio-desktop.avif)] bg-[url(/testimonio-movile.avif)]top-0 left-0 absolute w-full h-full bg-no-repeat bg-cover"
+				>
+				</div>
+
+				<div>
+					<div class="flex flex-col items-center justify-center h-full">
+						<div
+							class="grid lg:grid-cols-2 gap-4 w-full h-full place-items-center"
+						>
+							{
+								TESTIMONIOS.map((testimonial) => (
+									<div class="w-full h-full z-10">
+										<div class=" w-full h-full    relative overflow-hidden rounded-lg p-4 ">
+											<div class="absolute inset-0 w-full h-full bg-white/20 -z-10 backdrop-blur-lg" />
+											{testimonial.content.text.map((text) => (
+												<p class="text-pretty text-white mb-4">{text}</p>
+											))}
+											<h4 class="text-pretty text-white text-base font-bold my-4">
+												{testimonial.content.signature.name},
+												{testimonial.content.signature.empresa}
+											</h4>
+										</div>
+									</div>
+								))
+							}
+						</div>
+					</div>
+				</div>
+			</Section>
+			<Section>
+				<div class="container mx-auto p-4">
+					<div class="flex flex-col items-center justify-center">
+						<h2 class="text-center text-xkale text-2xl font-bold mb-[0.83rem]">
+							¿Tienes dudas?
+						</h2>
+						<h3 class="text-center text-xkale text-xl font-bold mb-4">
+							No te preocupes
+						</h3>
+						<div class="w-full max-w-[50rem]">
+							<p class="text-center text-pretty my-4">
+								Nuestro diagnóstico gratuito en experiencia del cliente está
+								diseñado para empresas comprometidas en adoptar una
+								transformación con una estrategia de experiencia del cliente
+								clara y efectiva.
+							</p>
+						</div>
+						<div class="w-full">
+							{
+								PREGUNTA.map(({ title, text }) => (
+									<details
+										name="pregunta"
+										class="group border rounded-md p-4 bg-gray-50 shadow-md w-full"
+									>
+										<summary class="flex items-center cursor-pointer text-lg font-semibold text-xkale text-balance">
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												fill="none"
+												viewBox="0 0 24 24"
+												stroke-width="2"
+												stroke="currentColor"
+												class="w-6 h-6 transform group-open:rotate-90 transition-transform"
+											>
+												<path
+													stroke-linecap="round"
+													stroke-linejoin="round"
+													d="M9 5l7 7-7 7"
+												/>
+											</svg>
+											{title}
+										</summary>
+										<p class="flex-shrink-0 mr-3 text-pretty">{text}</p>
+									</details>
+								))
+							}
+						</div>
+					</div>
+				</div>
+			</Section>
+			<Section class="relative overflow-hidden" id="inscripcion">
+				<div
+					class="absolute inset-0 bg-gradient-to-l from-xkaleblue-300 via-xkaleblue-100 to-xkaleblue-300 -z-10 w-full h-full"
+				>
+				</div>
+				<div class="grid lg:grid-cols-2">
+					<div>
+						<Icon name="logo" class="text-xkale text-[180px] mb-[0.83rem]" />
+						<h2 class="text-balance text-xkale text-2xl mb-[0.83rem] font-bold">
+							Agenda tu diagnóstico gratuito de experiencia del cliente.
+						</h2>
+						<p class="text-pretty text-white">
+							Debido a la personalización de cada diagnóstico, evaluamos
+							previamente la aplicación de cada empresa. Completa el formulario
+							para saber si tu empresa califica para recibir este diagnóstico
+							gratuito y sin compromiso.
+						</p>
+					</div>
+					<div id="formulario">
+						<div class="_form_18"></div><script
+							src="https://xkale.activehosted.com/f/embed.php?id=18"
+							charset="utf-8"></script>
+					</div>
+				</div>
+			</Section>
+		</main>
+		<Footer />
+	</body><script
+		type="module"
+		src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"
+	></script>
+</html>
+
+<style is:global>
+	@import "tailwindcss";
+
+	@theme {
+		--color-xkale: #6bd63d;
+		--color-bluePrimary: #004cff;
+		--color-xkaleblue-100: #134d67;
+		--color-xkaleblue-200: #0c2455;
+		--color-xkaleblue-300: #121336;
+
+		--text-h3: 1.17rem;
+	}
+
+	body {
+		font-family: "Public Sans Variable", sans-serif;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+</style>

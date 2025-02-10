@@ -1,0 +1,90 @@
+---
+const { title, description } = Astro.props;
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+<!-- <link rel="canonical" href={CanonicalURL} /> -->
+
+<!-- Global Metadata -->
+<link rel="icon" href="/favicon.png" />
+<link rel="apple-touch-icon" href="/images/icon/192x192.png" />
+<!-- <link rel="manifest" href="/manifest.webmanifest" /> -->
+<meta name="google" content="notranslate" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:locale" content="es_ES" />
+<meta property="og:type" content="website" />
+<!-- <meta property="og:url" content={CanonicalURL} /> -->
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<!-- <meta property="og:image" content={CanonicalURL} /> -->
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content="" />
+<meta name="twitter:image:alt" content={title} />
+<!-- <meta name="twitter:site" content="@gndx" /> -->
+<!-- <meta name="twitter:creator" content="@gndx" /> -->
+
+<!-- Meta Pixel Code -->
+<script type="module">
+  !(function (f, b, e, v, n, t, s) {
+    if (f.fbq) return;
+    n = f.fbq = function () {
+      n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+    };
+    if (!f._fbq) f._fbq = n;
+    n.push = n;
+    n.loaded = !0;
+    n.version = "2.0";
+    n.queue = [];
+    t = b.createElement(e);
+    t.async = !0;
+    t.src = v;
+    s = b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t, s);
+  })(
+    window,
+    document,
+    "script",
+    "https://connect.facebook.net/en_US/fbevents.js",
+  );
+  fbq("init", "1132310535194898");
+  fbq("track", "PageView");
+</script>
+<noscript
+  ><img
+    height="1"
+    width="1"
+    style="display:none"
+    src="https://www.facebook.com/tr?id=1132310535194898&ev=PageView&noscript=1"
+  /></noscript
+>
+<!-- End Meta Pixel Code -->
+
+<script
+  type="module"
+  src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1/lite-youtube.min.js"
+></script>
+
+<script type="text/javascript">
+  (function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s),
+      dl = l != "dataLayer" ? "&l=" + l : "";
+    j.async = true;
+    j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+    f.parentNode.insertBefore(j, f);
+  })(window, document, "script", "dataLayer", "GTM-KB9DNXPH");
+</script>

@@ -1,0 +1,46 @@
+---
+import Seo from "@components/Seo.astro";
+import Footer from "@components/Footer.astro";
+import Header from "@components/Header.astro";
+import "@fontsource-variable/public-sans";
+import "../styles/global.css";
+---
+
+<html lang="es">
+  <head>
+    <Seo title="Thanks u" description="Landing cx xkale" />
+    <script>
+      setTimeout(() => {
+        window.location.href = "https://xkale.com/";
+      }, 2000);
+    </script>
+  </head>
+  <body>
+    <div class="grid grid-rows-[auto_1fr_auto] h-screen">
+      <Header />
+      <main>
+        <div class="w-full h-full flex flex-col justify-center items-center">
+          <h1 class="lg:text-6xl text-balance text-xkale text-center">
+            ¡Tus datos han sido registrados! ✅
+          </h1>
+          <p class="text-pretty text-center text-xl">
+            Revisa tu bandeja de entrada y de promoción para confirmación de tu
+            diagnóstico 📪
+          </p>
+          <p class="text-pretty text-center text-xl">
+            <strong>¿Qué sigue?</strong>
+          </p>
+          <p class="text-pretty text-center text-xl">
+            ¡Mantente atento! Nuestro equipo te contactará en breve para
+            siguientes pasos.👩🏻‍💻
+          </p>
+        </div>
+      </main>
+      <Footer />
+    </div>
+    <script type="module">
+      fbq("track", "CompleteRegistration");
+    </script>
+  </body>
+</html>
+

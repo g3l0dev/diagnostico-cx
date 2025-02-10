@@ -1,0 +1,48 @@
+---
+import { Icon } from "astro-icon/components";
+import CONTACTO from "@utils/CONTACTO.json";
+import SOCIALS from "@utils/SOCIALS.json";
+import Social from "./Social.astro";
+import Contacto from "./Contacto.astro";
+const date = new Date();
+---
+
+<footer class="text-white bg-black">
+  <div class="container mx-auto p-4">
+    <div class="flex flex-col justify-center">
+      <div class="grid lg:grid-cols-3">
+        <div class="">
+          <Icon name="logo" class="w-auto h-24 text-xkale" />
+        </div>
+        <div class="">
+          <h2 class="text-2xl font-bold my-[0.83em]">Contacto</h2>
+          {CONTACTO.map((item) => <Contacto {...item} />)}
+          <h3 class="text-lg font-bold mt-4">Correos electronicos</h3>
+          <div class="flex gap-x-2">
+            <p>info@xkale.com</p>
+            <span>|</span>
+            <p>ventas@xkale.com</p>
+          </div>
+        </div>
+        <div class="flex gap-x-4">
+          {SOCIALS.map((item) => <Social {...item} />)}
+        </div>
+      </div>
+      <div
+        class="lg:flex lg:justify-between lg:items-center mt-4 border-t-2 pt-4"
+      >
+        <small
+          >&copy; {date.getFullYear()} | Xkale todos los derechos reservados</small
+        >
+        <div class="flex gap-x-4">
+          <a href="/privacidad" class="text-pretty lg:hover:text-xkale"
+            ><small>Política de privacidad</small></a
+          >
+          <a href="/cookies" class="text-pretty lg:hover:text-xkale"
+            ><small>politica de cookies</small></a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

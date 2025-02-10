@@ -1,0 +1,13 @@
+---
+import { Icon } from "astro-icon/components";
+interface Props {
+  href: string;
+  icon: string;
+  aria: string;
+}
+const { href, icon, aria } = Astro.props;
+---
+
+<a href={href} aria-label={aria} target="_blank">
+  <Icon name={icon} class="text-2xl lg:hover:text-xkale" />
+</a>

@@ -1,0 +1,17 @@
+[
+  {
+    "icon": "linkedin",
+    "href": "https://www.linkedin.com/company/xkaletm/posts/?feedView=all",
+    "aria": "Linkedin"
+  },
+  {
+    "icon": "instagram",
+    "href": "https://www.instagram.com/xkaletm/",
+    "aria": "Instagram"
+  },
+  {
+    "icon": "youtube",
+    "href": "https://www.youtube.com/@xkale_",
+    "aria": "Youtube"
+  }
+]

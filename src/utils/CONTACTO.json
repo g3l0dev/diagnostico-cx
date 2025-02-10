@@ -1,0 +1,25 @@
+[
+  {
+    "pais": "Ecuador",
+    "telefono": "(+59) 324007400"
+  },
+  {
+    "pais": "Perú",
+    "telefono": "(+51) 15100358"
+  },
+  {
+    "pais": "Bolivia",
+    "telefono": "(+591) 50701028"
+  },
+  {
+    "pais": "México",
+    "telefono": "(+52) 5593170746"
+  },
+
+  {
+    "correo": "info@xkale.com"
+  },
+  {
+    "correo": "ventas@xkale.com"
+  }
+]
